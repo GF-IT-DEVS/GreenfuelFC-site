@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    .bg-primary, .bg-success {
+   border: 1px dotted white;
+}
+
+img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+.goalkeeper{
+   
+    width: 300px;
+    margin-left: 40px;
+}
+.goalkeepers{
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding-bottom: 30px;
+}
+.playerinfor{
+    border: solid;
+    border-color: grey;
+    display: grid;
+    background-color: rgb(81, 222, 81);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.playerpic{
+    height: 300px;
+    background-color: white;
+    transition: 1s;
+}
+.playerpic:hover{
+    transform: scale(1.3);
+    z-index: 3;
+    opacity: 0.9;
+}
+.age{
+    margin-top: 30px;
+}
+span{
+    text-decoration: underline;
+}
+.midfilder{
+   
+    width: 300px;
+    margin-left: 40px;
+}
+.midfilders{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 30px;
+    background-color: white;
+    padding-bottom: 30px;
+}
+.striker{
+   
+    width: 300px;
+    margin-left: 40px;
+}
+.strikers{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 30px;
+    background-color: white;
+    padding-bottom: 30px;
+}
+h1{
+    margin: 30px;
+    color: rgba(81, 222, 81); 
+    text-align: center;
+}
+.detail{
+border-left: solid;
+border-color: grey;
+}
+
+</style>
+<head>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="utf-8">
+    <title>Greenfuel fc squad</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="GreenfuelFc" name="Greenfuel Football club">
+    <meta content="GreenfuelFc" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- malcom styles-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+     <div class="container-fluid bg-success px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>GREENFUEL, CHISUMBANJE</small>
+                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+012 345 6789</small>
+                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>greenfuel.footballclub@greenfuel.co.zw</small>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://twitter.com/EthanolBoys"><i class="fab fa-twitter fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.facebook.com/profile.php?id=100065264750077"><i class="fab fa-facebook-f fw-normal"></i></a>
+                    
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.instagram.com/greenfuelfc/"><i class="fab fa-instagram fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle" href=""><i class="fab fa-youtube fw-normal"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+            <a href="index.html" class="navbar-brand p-0">
+              <img src="img/logo.png" alt="logo" style= "height: 45px;">  
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="club.html" class="nav-item nav-link">Club</a>
+                    <a href="fixtures.html" class="nav-item nav-link">Fixtures</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">News</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="latest.html" class="dropdown-item">Latest</a>
+                            <a href="coming/comingsoon.html" class="dropdown-item">General</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">More</a>
+                        <div class="dropdown-menu m-0">
+                           <a href="shop.html" class="dropdown-item">Shop</a>
+                            <a href="media.html" class="dropdown-item">Gallery</a>
+                            <a href="team.html" class="dropdown-item">Players</a>
+                             <!--<a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                            <a href="quote.html" class="dropdown-item">Free Quote</a> -->
+                        </div>
+                    </div>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+                <butaton type="button" class="btn text-primary ms-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></butaton>
+              
+            </div>
+        </nav>
+
+        <div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">
+            <div class="row py-5">
+                <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+                    <h1 class="display-4 text-success animated zoomIn">Players</h1>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Full Screen Search Start -->
+    <div class="modal fade" id="searchModal" tabindex="-1">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content" style="background: rgba(9, 30, 62, .7);">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex align-items-center justify-content-center">
+                    <div class="input-group" style="max-width: 600px;">
+                        <input type="text" class="form-control bg-transparent border-primary p-3" placeholder="Type search keyword">
+                        <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Full Screen Search End -->
+
+
+    <!-- Team Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+      <div class="players">
+    <h1>GOALKEEPERS</h1>
+   <div class="goalkeepers">
+    <div class="goalkeeper">
+        <div class="playerpic"><span style="color: black; margin-top: 200px; font-size: larger;">Monada king</span><img src="team/gettyimages-160422559-594x594.jpg" alt=""></div>
+        <div class="playerinfor">
+            <div class="detail" style="border-left: none;"><h3> <span>Age</span><div class="age"><h4>43</h4></div></h3></div>
+            <div class="detail"><h3><span>Games</span><div class="age"><h3>431</h2></div></h1></div>
+            <div class="detail" style="border-right: none;"><h3><span>Saves</span><div class="age"><h3>431</h2></div></h1></div>
+            <div class="detail"><h3><span>Num</span></h3><div class="age"><h3>1</h3></div></div>
+        </div>
+    </div>
+    <div class="goalkeeper">
+        <div class="playerpic"><span style="color: black; margin-top: 200px; font-size: larger;">Monada king</span><img src="team/gettyimages-160422559-594x594.jpg" alt=""></div>
+        <div class="playerinfor">
+            <div class="detail" style="border-left: none;"><h3> <span>Age</span><div class="age"><h4>43</h4></div></h3></div>
+            <div class="detail"><h3><span>Games</span><div class="age"><h3>431</h2></div></h1></div>
+            <div class="detail" style="border-right: none;"><h3><span>Saves</span><div class="age"><h3>431</h2></div></h1></div>
+            <div class="detail"><h3><span>Num</span></h3><div class="age"><h3>1</h3></div></div>
+        </div>
+    </div>
+    <div class="goalkeeper">
+    <div class="playerpic"><span style="color: black; margin-top: 200px; font-size: larger;">Monada king</span><img src="team/gettyimages-160422559-594x594.jpg" alt=""></div>
+    <div class="playerinfor">
+        <div class="detail" style="border-left: none;"><h3> <span>Age</span><div class="age"><h4>43</h4></div></h3></div>
+        <div class="detail"><h3><span>Games</span><div class="age"><h3>431</h2></div></h1></div>
+        <div class="detail" style="border-right: none;"><h3><span>Saves</span><div class="age"><h3>431</h2></div></h1></div>
+        <div class="detail"><h3><span>Num</span></h3><div class="age"><h3>1</h3></div></div>
+    </div>
+    </div>
+    <div class="goalkeeper">
+    <div class="playerpic"><span style="color: black; margin-top: 200px; font-size: larger;">Monada king</span><img src="team/gettyimages-160422559-594x594.jpg" alt=""></div>
+    <div class="playerinfor">
+        <div class="detail" style="border-left: none;"><h3> <span>Age</span><div class="age"><h4>43</h4></div></h3></div>
+        <div class="detail"><h3><span>Games</span><div class="age"><h3>431</h2></div></h1></div>
+        <div class="detail" style="border-right: none;"><h3><span>Saves</span><div class="age"><h3>431</h2></div></h1></div>
+        <div class="detail"><h3><span>Num</span></h3><div class="age"><h3>1</h3></div></div>
+    </div>
+    </div>
+    </div>
+    <h1>MIDFILDERS</h1>
+<div class="midfilders">
+    <div class="midfilder">
+        <div class="playerpic"><span style="color: black; margin-top: 200px; font-size: larger;">Monada king</span><img src="team/gettyimages-160422559-594x594.jpg" alt=""></div>
+        <div class="playerinfor">
+            <div class="detail" style="border-left: none;"><h3> <span>Age</span><div class="age"><h4>43</h4></div></h3></div>
+            <div class="detail"><h3><span>Games</span><div class="age"><h3>431</h2></div></h1></div>
+            <div class="detail" style="border-right: none;"><h3><span>Goals</span><div class="age"><h3>431</h2></div></h1></div>
+            <div class="detail"><h3><span>Num</span></h3><div class="age"><h3>1</h3></div></div>
+        </div>
+    </div>
+    <div class="midfilder">
+        <div class="playerpic"><span style="color: black; margin-top: 200px; font-size: larger;">Monada king</span><img src="team/gettyimages-160422559-594x594.jpg" alt=""></div>
+        <div class="playerinfor">
+            <div class="detail" style="border-left: none;"><h3> <span>Age</span><div class="age"><h4>43</h4></div></h3></div>
+            <div class="detail"><h3><span>Games</span><div class="age"><h3>431</h2></div></h1></div>
+            <div class="detail" style="border-right: none;"><h3><span>Goals</span><div class="age"><h3>431</h2></div></h1></div>
+            <div class="detail"><h3><span>Num</span></h3><div class="age"><h3>1</h3></div></div>
+        </div>
+    </div>
+    <div class="midfilder">
+    <div class="playerpic"><span style="color: black; margin-top: 200px; font-size: larger;">Monada king</span><img src="team/gettyimages-160422559-594x594.jpg" alt=""></div>
+    <div class="playerinfor">
+        <div class="detail" style="border-left: none;"><h3> <span>Age</span><div class="age"><h4>43</h4></div></h3></div>
+        <div class="detail"><h3><span>Games</span><div class="age"><h3>431</h2></div></h1></div>
+        <div class="detail" style="border-right: none;"><h3><span>Goals</span><div class="age"><h3>431</h2></div></h1></div>
+        <div class="detail"><h3><span>Num</span></h3><div class="age"><h3>1</h3></div></div>
+    </div>
+    </div>
+    <div class="midfilder">
+    <div class="playerpic"><span style="color: black; margin-top: 200px; font-size: larger;">Monada king</span><img src="team/gettyimages-160422559-594x594.jpg" alt=""></div>
+    <div class="playerinfor">
+        <div class="detail" style="border-left: none;"><h3> <span>Age</span><div class="age"><h4>43</h4></div></h3></div>
+        <div class="detail"><h3><span>Games</span><div class="age"><h3>431</h2></div></h1></div>
+        <div class="detail" style="border-right: none;border-bottom: none;"><h3><span>Goals</span><div class="age"><h3>431</h2></div></h1></div>
+        <div class="detail"><h3><span>Num</span></h3><div class="age"><h3>1</h3></div></div>
+    </div>
+    </div>
+    <div class="midfilder">
+        <div class="playerpic"><span style="color: black; margin-top: 200px; font-size: larger;">Monada king</span><img src="team/gettyimages-160422559-594x594.jpg" alt=""></div>
+        <div class="playerinfor">
+            <div class="detail" style="border-left: none;"><h3> <span>Age</span><div class="age"><h4>43</h4></div></h3></div>
+            <div class="detail"><h3><span>Games</span><div class="age"><h3>431</h2></div></h1></div>
+            <div class="detail" style="border-right: none;"><h3><span>Saves</span><div class="age"><h3>431</h2></div></h1></div>
+            <div class="detail" ><h3><span>Num</span></h3><div class="age"><h3>1</h3></div></div>
+        </div>
+        </div>
+        <div class="midfilder">
+            <div class="playerpic"><span style="color: black; margin-top: 200px; font-size: larger;">Monada king</span><img src="team/gettyimages-160422559-594x594.jpg" alt=""></div>
+            <div class="playerinfor">
+                <div class="detail" style="border-left: none;"><h3> <span>Age</span><div class="age"><h4>43</h4></div></h3></div>
+                <div class="detail"><h3><span>Games</span><div class="age"><h3>431</h2></div></h1></div>
+                <div class="detail" style="border-right: none;"><h3><span>Saves</span><div class="age"><h3>431</h2></div></h1></div>
+                <div class="detail" style="border-right: solid; border-color: grey; border-left: none;border-bottom: none;"><h3><span>Num</span></h3><div class="age"><h3>1</h3></div></div>
+            </div>
+            </div>
+            <div class="midfilder">
+                <div class="playerpic"><span style="color: black; margin-top: 200px; font-size: larger;">Monada king</span><img src="team/gettyimages-160422559-594x594.jpg" alt=""></div>
+                <div class="playerinfor">
+                    <div class="detail" style="border-left: none;"><h3> <span>Age</span><div class="age"><h4>43</h4></div></h3></div>
+                    <div class="detail"><h3><span>Games</span><div class="age"><h3>431</h2></div></h1></div>
+                    <div class="detail" style="border-right: none;"><h3><span>Goals</span><div class="age"><h3>431</h2></div></h1></div>
+                    <div class="detail" style="border-bottom: none;"><h3><span>Num</span></h3><div class="age"><h3>1</h3></div></div>
+                </div>
+            </div>
+    </div>
+    <h1>STRIKERS</h1>
+    <div class="strikers">
+        <div class="striker">
+                <div class="playerpic"><span style="color: black; margin-top: 200px; font-size: larger;">Monada king</span><img src="team/gettyimages-160422559-594x594.jpg" alt=""></div>
+                <div class="playerinfor">
+                    <div class="detail" style="border-left: none;"><h3> <span>Age</span><div class="age"><h4>43</h4></div></h3></div>
+                    <div class="detail"><h3><span>Games</span><div class="age"><h3>431</h2></div></h1></div>
+                    <div class="detail" style="border-right: none;"><h3><span>Goals</span><div class="age"><h3>431</h2></div></h1></div>
+                    <div class="detail" style="border-color: grey; border-left: solid; border-bottom: none;"><h3><span>Num</span></h3><div class="age"><h3>1</h3></div></div>
+                </div>
+            </div>
+            <div class="striker">
+                <div class="playerpic"><span style="color: black; margin-top: 200px; font-size: larger;">Monada king</span><img src="team/gettyimages-160422559-594x594.jpg" alt=""></div>
+                <div class="playerinfor">
+                    <div class="detail" style="border-left: none;"><h3> <span>Age</span><div class="age"><h4>43</h4></div></h3></div>
+                    <div class="detail"><h3><span>Games</span><div class="age"><h3>431</h2></div></h1></div>
+                    <div class="detail" style="border-right: none;"><h3><span>Goals</span><div class="age"><h3>431</h2></div></h1></div>
+                    <div class="detail" style="border-bottom: none;"><h3><span>Num</span></h3><div class="age"><h3>1</h3></div></div>
+                </div>
+            </div>
+            <div class="striker">
+            <div class="playerpic"><span style="color: black; margin-top: 200px; font-size: larger;">Monada king</span><img src="team/gettyimages-160422559-594x594.jpg" alt=""></div>
+            <div class="playerinfor">
+                <div class="detail" style="border-left: none;"><h3> <span>Age</span><div class="age"><h4>43</h4></div></h3></div>
+                <div class="detail"><h3><span>Games</span><div class="age"><h3>431</h2></div></h1></div>
+                <div class="detail" style="border-right: none;"><h3><span>Goals</span><div class="age"><h3>431</h2></div></h1></div>
+                <div class="detail" style="border-bottom: none;"><h3><span>Num</span></h3><div class="age"><h3>1</h3></div></div>
+            </div>
+            </div>
+            <div class="striker">
+            <div class="playerpic"><span style="color: black; margin-top: 200px; font-size: larger;">Monada king</span><img src="team/gettyimages-160422559-594x594.jpg" alt=""></div>
+            <div class="playerinfor">
+                <div class="detail" style="border-left: none;"><h3> <span>Age</span><div class="age"><h4>43</h4></div></h3></div>
+                <div class="detail"><h3><span>Games</span><div class="age"><h3>431</h2></div></h1></div>
+                <div class="detail" style="border-right: none;"><h3><span>Goals</span><div class="age"><h3>431</h2></div></h1></div>
+                <div class="detail" style="border-bottom: none;"><h3><span>Num</span></h3><div class="age"><h3>1</h3></div></div>
+            </div>
+            </div>
+        </div>
+ 
+    </div>
+</div>   
+
+    </div>
+    <!-- Team End -->
+
+
+    <!-- Vendor Start -->
+   <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5 mb-5">
+            <div class="bg-white">
+              <div class="sponsor-heading text-center mb-4">
+            <h2 class="text-success">Our Sponsors</h2>
+        </div>   
+                <div class="owl-carousel vendor-carousel">
+                    <img src="img/vendor-1.png" alt="">
+                    <img src="img/vendor-2.png" alt="">
+                    <img src="img/vendor-3.png" alt="">
+                    <img src="img/vendor-4.png" alt="">
+                    <img src="img/vendor-5.png" alt="">
+                    <img src="img/vendor-6.png" alt="">
+                    <img src="img/vendor-7.png" alt="">
+                    <img src="img/vendor-8.png" alt="">
+                    <img src="img/vendor-9.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Vendor End -->
+    
+
+    <!-- Footer Start -->
+ <div class="container-fluid bg-success text-light mt-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-success p-4">
+                        <a href="index.html" class="navbar-brand">
+                            <h1 class="m-0 text-white"><i></i>Become a Member</h1>
+                        </a>
+                        <p class="mt-3 mb-4">Join our club's community today by becoming a member! As a member, you'll get access to exclusive content, including behind-the-scenes videos, player interviews, and pre-match analysis. You'll also receive our monthly newsletter, featuring the latest club news, upcoming fixtures, and member-only offers</p>
+                        <form action="coming/comingsoon.html" onsubmit="window.location.href = this.action; return false;">
+                            <div class="input-group">
+                               <input type="text" class="form-control border-white p-3" placeholder="Your Email">
+                                    <button class="btn btn-dark">Sign Up</button>
+                                     </div>
+                              </form>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-6">
+                    <div class="row gx-5">
+                        <div class="col-lg-4 col-md-12 pt-5 mb-5">
+                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                                <h3 class="text-light mb-0">Get In Touch</h3>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-geo-alt text-primary me-2"></i>
+                                <p class="mb-0">Greenfuel, Chisumabnje</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-envelope-open text-primary me-2"></i>
+                                <p class="mb-0">greenfuel.footballclub@co.zw</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-telephone text-primary me-2"></i>
+                                <p class="mb-0">+012 345 67890</p>
+                            </div>
+                            <div class="d-flex mt-4">
+                                <a class="btn btn-primary btn-square me-2" href="https://twitter.com/EthanolBoys"><i class="fab fa-twitter fw-normal"></i></a>
+                                <a class="btn btn-primary btn-square me-2" href="https://www.facebook.com/profile.php?id=100065264750077"><i class="fab fa-facebook-f fw-normal"></i></a>
+                                <a class="btn btn-primary btn-square" href="https://www.instagram.com/greenfuelfc/"><i class="fab fa-instagram fw-normal"></i></a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid text-white" style="background: #061429;">
+        <div class="container text-center">
+            <div class="row justify-content-end">
+                <div class="col-lg-8 col-md-6">
+                    <div class="d-flex align-items-center justify-content-center" style="height: 75px;">
+                        <p class="mb-0">&copy; <a class="text-white border-bottom" href="#">GreenFuelFC</a>. All Rights Reserved. 
+                        
+                        
+                        Designed by <a class="text-white border-bottom" href="https://htmlcodex.com">GreenFuel(PVT)LTD</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

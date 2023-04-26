@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+    .bg-primary, .bg-success {
+   border: 1px dotted white;
+}
+.fixture-nav {
+  background-color: #f2f2f2;
+  overflow: hidden;
+}
+
+.fixture-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.fixture-nav li {
+  display: inline-block;
+}
+
+.fixture-nav a {
+  display: block;
+  color: #666;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.fixture-nav a:hover {
+  background-color: #ddd;
+  color: #333;
+}
+.fixture-nav a.active {
+  background-color: #ddd;
+  color: #333;
+}
+</style>
+<head>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="utf-8">
+    <title>Greenfuel FC Fixtures</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="GreenfuelFc" name="Greenfuel Football club">
+    <meta content="GreenfuelFc" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+     <link href="css/fixtures.css" rel="stylesheet">
+     <link href="css/results.css" rel="stylesheet">
+     <link rel="stylesheet" href="css/table.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+   $(document).ready(function() {
+  $('.fixture-nav a').click(function() {
+    $('.fixture-nav a').removeClass('active');
+    $(this).addClass('active');
+
+    // hide all content divs
+    $('.content').hide();
+
+    // show the content div corresponding to the active link
+    var target = $(this).attr('href');
+    $(target).show();
+  });
+}); 
+  </script>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-success px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>GREENFUEL, CHISUMBANJE</small>
+                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+012 345 6789</small>
+                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>greenfuel.footballclub@greenfuel.co.zw</small>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+           <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://twitter.com/EthanolBoys"><i class="fab fa-twitter fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.facebook.com/profile.php?id=100065264750077"><i class="fab fa-facebook-f fw-normal"></i></a>
+                    
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.instagram.com/greenfuelfc/"><i class="fab fa-instagram fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle" href=""><i class="fab fa-youtube fw-normal"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+            <a href="index.html" class="navbar-brand p-0">
+            <img src="img/logo.png" alt="logo" style= "height: 45px;">   
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="club.html" class="nav-item nav-link">Club</a>
+                    <a href="fixtures.html" class="nav-item nav-link active">Fixtures</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">News</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="latest.html" class="dropdown-item">Latest</a>
+                             <a href="coming/comingsoon.html" class="dropdown-item">General</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">More</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="shop.html" class="dropdown-item">Shop</a>
+                            <a href="media.html" class="dropdown-item">Gallery</a>
+                            <a href="team.html" class="dropdown-item">Players</a>
+                             <!--<a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                            <a href="quote.html" class="dropdown-item">Free Quote</a>-->
+                        </div>
+                    </div>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+                <butaton type="button" class="btn text-primary ms-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></butaton>
+                
+            </div>
+        </nav>
+
+        <div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">
+            <div class="row py-5">
+                <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Full Screen Search Start -->
+    <div class="modal fade" id="searchModal" tabindex="-1">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content" style="background: rgba(9, 30, 62, .7);">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex align-items-center justify-content-center">
+                    <div class="input-group" style="max-width: 600px;">
+                        <input type="text" class="form-control bg-transparent border-primary p-3" placeholder="Type search keyword">
+                        <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Full Screen Search End -->
+<!-- sub nav bar start-->
+<nav class="fixture-nav">
+  <ul>
+    <li><a href="#fixtures" class="text-success">Fixtures</a></li>
+    <li><a href="#results" class="text-success">Results</a></li>
+    <li><a href="#log-table" class="text-success">Log Table</a></li>
+    <li><a href="#stats" class="text-success">Players Stats</a></li>
+  </ul>
+</nav>
+
+<div id="fixtures" class="content">
+  <!-- Fixture content here -->
+  <div class="fixture">
+            <div class="date">
+                <p class="dte">TBA</p>
+            </div>
+            <div class="match">
+                <div class="team">
+                 <p>Yadah FC</p><div class="logo"><img src="pagesimages/yadah.jpg" alt=""></div>
+                </div>
+                <div class="time">
+                    <p>TBA</p>
+                </div>
+                <div class="team">
+                    <div class="logo" style="margin-left: 5px;"><img src="pagesimages/greenfuel fc logo.jpg" alt=""></div><p style="margin-left: 20px;">Greenfuel FC</p>
+                </div>
+            </div>
+            <div class="stadium">
+                <div><p>stadium</p></div>
+               <div class="stname"><p>TBA</p></div>
+           </div>
+
+        </div>
+        <div class="fixture">
+            <div class="date">
+                <p class="dte">TBA</p>
+            </div>
+            <div class="match">
+                <div class="team">
+                 <p>Greenfuel FC</p><div class="logo"><img src="pagesimages/greenfuel fc logo.jpg" alt=""></div>
+                </div>
+                <div class="time">
+                    <p>TBA</p>
+                </div>
+                <div class="team">
+                    <div class="logo" style="margin-left: 5px;"><img src="pagesimages/herentials.jfif" alt=""></div><p style="margin-left: 20px;">Herentials College FC</p>
+                </div>
+            </div>
+            <div class="stadium">
+                <div><p>stadium</p></div>
+               <div class="stname"><p>TBA</p></div>
+           </div>
+
+        </div>
+        <div class="fixture">
+            <div class="date">
+                <p class="dte">TBA</p>
+            </div>
+            <div class="match">
+                <div class="team">
+                 <p>Hwange FC</p><div class="logo"><img src="pagesimages/hwange.png" alt=""></div>
+                </div>
+                <div class="time">
+                    <p>TBA</p>
+                </div>
+                <div class="team">
+                    <div class="logo" style="margin-left: 5px;"><img src="pagesimages/greenfuel fc logo.jpg" alt=""></div><p style="margin-left: 20px;">Greenfuel FC</p>
+                </div>
+            </div>
+            <div class="stadium">
+                <div><p>stadium</p></div>
+               <div class="stname"><p>TBA</p></div>
+           </div>
+
+        </div>
+        <div class="fixture">
+            <div class="date">
+                <p class="dte">TBA</p>
+            </div>
+            <div class="match">
+                <div class="team">
+                 <p>Greenfuel FC</p><div class="logo"><img src="pagesimages/greenfuel fc logo.jpg" alt=""></div>
+                </div>
+                <div class="time">
+                    <p>TBA</p>
+                </div>
+                <div class="team">
+                    <div class="logo" style="margin-left: 5px;"><img src="pagesimages/manica.jpg" alt=""></div><p style="margin-left: 20px;">Manica Diamonds FC</p>
+                </div>
+            </div>
+            <div class="stadium">
+                <div><p>stadium</p></div>
+               <div class="stname"><p>TBA</p></div>
+           </div>
+
+        </div>
+        <div class="fixture">
+            <div class="date">
+                <p class="dte">TBA</p>
+            </div>
+            <div class="match">
+                <div class="team">
+                 <p>Sheasham FC</p><div class="logo"><img src="pagesimages/sheasham.png" alt=""></div>
+                </div>
+                <div class="time">
+                    <p>TBA</p>
+                </div>
+                <div class="team">
+                    <div class="logo" style="margin-left: 5px;"><img src="pagesimages/greenfuel fc logo.jpg" alt=""></div><p style="margin-left: 20px;">Greenfuel FC</p>
+                </div>
+            </div>
+            <div class="stadium">
+                <div><p>stadium</p></div>
+               <div class="stname"><p>TBA</p></div>
+           </div>
+
+        </div>
+        <div class="fixture">
+            <div class="date">
+                <p class="dte">TBA</p>
+            </div>
+            <div class="match">
+                <div class="team">
+                 <p>Greenfuel FC</p><div class="logo"><img src="pagesimages/greenfuel fc logo.jpg" alt=""></div>
+                </div>
+                <div class="time">
+                    <p>TBA</p>
+                </div>
+                <div class="team">
+                    <div class="logo" style="margin-left: 5px;"><img src="pagesimages/ngezi.jpg" alt=""></div><p style="margin-left: 20px;">Ngezi Platinum FC</p>
+                </div>
+            </div>
+            <div class="stadium">
+                <div><p>stadium</p></div>
+               <div class="stname"><p>TBA</p></div>
+           </div>
+
+        </div>
+
+       <div class="fixture">
+            <div class="date">
+                <p class="dte">TBA</p>
+            </div>
+            <div class="match">
+                <div class="team">
+                 <p>Simbabhora FC</p><div class="logo"><img src="pagesimages/simba.jpg" alt=""></div>
+                </div>
+                <div class="time">
+                    <p>TBA</p>
+                </div>
+                <div class="team">
+                    <div class="logo" style="margin-left: 5px;"><img src="pagesimages/greenfuel fc logo.jpg" alt=""></div><p style="margin-left: 20px;">Greenfuel FC</p>
+                </div>
+            </div>
+            <div class="stadium">
+                <div><p>stadium</p></div>
+               <div class="stname"><p>TBA</p></div>
+           </div>
+
+        </div>
+        <div class="fixture">
+            <div class="date">
+                <p class="dte">TBA</p>
+            </div>
+            <div class="match">
+                <div class="team">
+                 <p>Greenfuel FC</p><div class="logo"><img src="pagesimages/greenfuel fc logo.jpg" alt=""></div>
+                </div>
+                <div class="time">
+                    <p>TBA</p>
+                </div>
+                <div class="team">
+                    <div class="logo" style="margin-left: 5px;"><img src="pagesimages/zpc.png" alt=""></div><p style="margin-left: 20px;">ZPC Kariba FC</p>
+                </div>
+            </div>
+            <div class="stadium">
+                <div><p>stadium</p></div>
+               <div class="stname"><p>TBA</p></div>
+           </div>
+
+        </div>
+        <div class="fixture">
+            <div class="date">
+                <p class="dte">TBA</p>
+            </div>
+            <div class="match">
+                <div class="team">
+                 <p>Cranborne Bullets FC</p><div class="logo"><img src="pagesimages/cranborne.png" alt=""></div>
+                </div>
+                <div class="time">
+                    <p>TBA</p>
+                </div>
+                <div class="team">
+                    <div class="logo" style="margin-left: 5px;"><img src="pagesimages/greenfuel fc logo.jpg" alt=""></div><p style="margin-left: 20px;">Greenfuel FC</p>
+                </div>
+            </div>
+            <div class="stadium">
+                <div><p>stadium</p></div>
+               <div class="stname"><p>TBA</p></div>
+           </div>
+
+        </div>
+        <div class="fixture">
+            <div class="date">
+                <p class="dte">TBA</p>
+            </div>
+            <div class="match">
+                <div class="team">
+                 <p>Greenfuel FC</p><div class="logo"><img src="pagesimages/greenfuel fc logo.jpg" alt=""></div>
+                </div>
+                <div class="time">
+                    <p>TBA</p>
+                </div>
+                <div class="team">
+                    <div class="logo" style="margin-left: 5px;"><img src="pagesimages/blackrhinos.jfif" alt=""></div><p style="margin-left: 20px;">Black Rhinos FC</p>
+                </div>
+            </div>
+            <div class="stadium">
+                <div><p>stadium</p></div>
+               <div class="stname"><p>TBA</p></div>
+           </div>
+
+        </div>
+        <div class="fixture">
+            <div class="date">
+                <p class="dte">TBA</p>
+            </div>
+            <div class="match">
+                <div class="team">
+                 <p>Highlanders FC</p><div class="logo"><img src="pagesimages/highlanders.jpg" alt=""></div>
+                </div>
+                <div class="time">
+                    <p>TBA</p>
+                </div>
+                <div class="team">
+                    <div class="logo" style="margin-left: 5px;"><img src="pagesimages/greenfuel fc logo.jpg" alt=""></div><p style="margin-left: 20px;">Greenfuel FC</p>
+                </div>
+            </div>
+            <div class="stadium">
+                <div><p>stadium</p></div>
+               <div class="stname"><p>TBA</p></div>
+           </div>
+
+        </div>
+        <div class="fixture">
+            <div class="date">
+                <p class="dte">TBA</p>
+            </div>
+            <div class="match">
+                <div class="team">
+                 <p>Greenfuel FC</p><div class="logo"><img src="pagesimages/greenfuel fc logo.jpg" alt=""></div>
+                </div>
+                <div class="time">
+                    <p>TBA</p>
+                </div>
+                <div class="team">
+                    <div class="logo" style="margin-left: 5px;"><img src="pagesimages/platinum.jfif" alt=""></div><p style="margin-left: 20px;">FC Platinum</p>
+                </div>
+            </div>
+            <div class="stadium">
+                <div><p>stadium</p></div>
+               <div class="stname"><p>TBA</p></div>
+           </div>
+
+        </div>
+        <div class="fixture">
+            <div class="date">
+                <p class="dte">TBA</p>
+            </div>
+            <div class="match">
+                <div class="team">
+                 <p>Bulawayo Chiefs FC</p><div class="logo"><img src="pagesimages/bulawayochiefs.png" alt=""></div>
+                </div>
+                <div class="time">
+                    <p>TBA</p>
+                </div>
+                <div class="team">
+                    <div class="logo" style="margin-left: 5px;"><img src="pagesimages/greenfuel fc logo.jpg" alt=""></div><p style="margin-left: 20px;">Greenfuel FC</p>
+                </div>
+            </div>
+            <div class="stadium">
+                <div><p>stadium</p></div>
+               <div class="stname"><p>TBA</p></div>
+           </div>
+
+        </div>
+        <div class="fixture">
+            <div class="date">
+                <p class="dte">TBA</p>
+            </div>
+            <div class="match">
+                <div class="team">
+                 <p>Greenfuel FC</p><div class="logo"><img src="pagesimages/greenfuel fc logo.jpg" alt=""></div>
+                </div>
+                <div class="time">
+                    <p>TBA</p>
+                </div>
+                <div class="team">
+                    <div class="logo" style="margin-left: 5px;"><img src="pagesimages/chickeninn.png" alt=""></div><p style="margin-left: 20px;">Chickeninn FC</p>
+                </div>
+            </div>
+            <div class="stadium">
+                <div><p>stadium</p></div>
+               <div class="stname"><p>TBA</p></div>
+           </div>
+           
+        </div>
+        <div class="fixture">
+            <div class="date">
+                <p class="dte">TBA</p>
+            </div>
+            <div class="match">
+                <div class="team">
+                 <p>Caps United FC</p><div class="logo"><img src="pagesimages/caps.png" alt=""></div>
+                </div>
+                <div class="time">
+                    <p>TBA</p>
+                </div>
+                <div class="team">
+                    <div class="logo" style="margin-left: 5px;"><img src="pagesimages/greenfuel fc logo.jpg" alt=""></div><p style="margin-left: 20px;">Greenfuel FC</p>
+                </div>
+            </div>
+            <div class="stadium">
+                <div><p>stadium</p></div>
+               <div class="stname"><p>TBA</p></div>
+           </div>
+
+        </div>
+        <div class="fixture">
+            <div class="date">
+                <p class="dte">TBA</p>
+            </div>
+            <div class="match">
+                <div class="team">
+                 <p>Greenfuel FC</p><div class="logo"><img src="pagesimages/greenfuel fc logo.jpg" alt=""></div>
+                </div>
+                <div class="time">
+                    <p>TBA</p>
+                </div>
+                <div class="team">
+                    <div class="logo" style="margin-left: 5px;"><img src="pagesimages/dynamos.jpg" alt=""></div><p style="margin-left: 20px;">Dynamos FC</p>
+                </div>
+            </div>
+            <div class="stadium">
+                <div><p>stadium</p></div>
+               <div class="stname"><p>TBA</p></div>
+           </div>
+
+        </div>
+        <div class="fixture">
+            <div class="date">
+                <p class="dte">TBA</p>
+            </div>
+            <div class="match">
+                <div class="team">
+                 <p>Triangle United FC</p><div class="logo"><img src="pagesimages/triangle.png" alt=""></div>
+                </div>
+                <div class="time">
+                    <p>TBA</p>
+                </div>
+                <div class="team">
+                    <div class="logo" style="margin-left: 5px;"><img src="pagesimages/greenfuel fc logo.jpg" alt=""></div><p style="margin-left: 20px;">Greenfuel FC</p>
+                </div>
+            </div>
+            <div class="stadium">
+                <div><p>stadium</p></div>
+               <div class="stname"><p>TBA</p></div>
+           </div>
+
+        
+
+
+
+    </div>
+</div>
+
+<div id="results" class="content">
+  <!-- Results content here -->
+      <div class="results">
+        </button></a></div>
+        <div class="year"><h1>2023</h1></div>
+        <div class="homeaway"> <h1>Home</h1>  <h1>Away</h1></div>
+        <div class="result">
+            <div class="date">
+                <p class="dte">Sun 24 April</p>
+            </div>
+            <div class="match">
+                <div class="team">
+                 <p>Greenfuel FC</p><div class="logo"><img src="pagesimages/greenfuel fc logo.jpg" alt=""></div>
+                </div>
+                <div class="score">
+                    <p>. - .</p>
+                </div>
+                <div class="team">
+                    <div class="logo" style="margin-left: 5px;"><img src="pagesimages/dynamos-logo1.jpg" alt=""></div><p style="margin-left: 20px;">Dynamos FC</p>
+                </div>
+            </div>
+            <div class="matchrev">
+                    <div><a href="#">Pending......</a></div>
+               </div>
+        </div>
+        <div class="result">
+         <div class="date">
+            <p class="dte">Mon 14 April</p>
+            </div>
+            <div class="match">
+                <div class="team">
+                <p>Dynamos FC</p><div class="logo"><img src="pagesimages/dynamos-logo1.jpg" alt=""></div>
+                </div>
+                <div class="score">
+                 <p>. - .</p>
+                    </div>
+                    <div class="team">
+                        <div class="logo" style="margin-left: 5px;"><img src="pagesimages/greenfuel fc logo.jpg" alt=""></div><p style="margin-left: 20px;">Greenfuel FC</p>
+                    </div>
+                </div>
+                <div class="matchrev">
+                        <div><a href="#">Pending.......</a></div>
+                   </div>
+                
+                                
+                                </div>
+        </div> 
+        </div> 
+        
+
+<div id="log-table" class="content">
+  <!-- Log table content here -->
+
+        
+        <div class="year"><h1>2023</h1></div> 
+        <div class="table"><iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT-OqjbllAn6WItlJEU4L_G8oOAn7XzPd1SlsJyLBiyuFVk1EFQkkzHxnhvaXuUoQ/pubhtml?widget=true&amp;headers=false"></iframe></div>
+   
+</div>
+
+<div id="stats" class="content">
+  <!-- stats here-->
+
+  <table>
+  <thead>
+    <tr>
+      <th>Player</th>
+      <th>Name</th>
+      <th>Premier League Goals</th>
+      <th>All Competitions Goals</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="img/player1.jpg" alt="Player 1"></td>
+      <td>Player 1</td>
+      <td>10</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <td><img src="img/player1.jpg" alt="Player 2"></td>
+      <td>Player 2</td>
+      <td>5</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td><img src="img/player1.jpg" alt="Player 3"></td>
+      <td>Player 3</td>
+      <td>3</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td><img src="img/player1.jpg" alt="Player 2"></td>
+      <td>Player 2</td>
+      <td>5</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td><img src="img/player1.jpg" alt="Player 2"></td>
+      <td>Player 2</td>
+      <td>5</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td><img src="img/player1.jpg" alt="Player 2"></td>
+      <td>Player 2</td>
+      <td>5</td>
+      <td>8</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<!-- sub nav bar end-->
+
+    
+
+    <!-- Vendor Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5 mb-5">
+            <div class="bg-white">
+              <div class="sponsor-heading text-center mb-4">
+            <h2 class="text-success">Our Sponsors</h2>
+        </div>   
+                <div class="owl-carousel vendor-carousel">
+                    <img src="img/vendor-1.png" alt="">
+                    <img src="img/vendor-2.png" alt="">
+                    <img src="img/vendor-3.png" alt="">
+                    <img src="img/vendor-4.png" alt="">
+                    <img src="img/vendor-5.png" alt="">
+                    <img src="img/vendor-6.png" alt="">
+                    <img src="img/vendor-7.png" alt="">
+                    <img src="img/vendor-8.png" alt="">
+                    <img src="img/vendor-9.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Vendor End -->
+    
+
+    <!-- Footer Start -->
+     <div class="container-fluid bg-success text-light mt-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-success p-4">
+                        <a href="index.html" class="navbar-brand">
+                            <h1 class="m-0 text-white"><i></i>Become a Member</h1>
+                        </a>
+                        <p class="mt-3 mb-4">Join our club's community today by becoming a member! As a member, you'll get access to exclusive content, including behind-the-scenes videos, player interviews, and pre-match analysis. You'll also receive our monthly newsletter, featuring the latest club news, upcoming fixtures, and member-only offers</p>
+                        <form action="coming/comingsoon.html" onsubmit="window.location.href = this.action; return false;">
+                            <div class="input-group">
+                               <input type="text" class="form-control border-white p-3" placeholder="Your Email">
+                                    <button class="btn btn-dark">Sign Up</button>
+                                     </div>
+                              </form>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-6">
+                    <div class="row gx-5">
+                        <div class="col-lg-4 col-md-12 pt-5 mb-5">
+                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                                <h3 class="text-light mb-0">Get In Touch</h3>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-geo-alt text-primary me-2"></i>
+                                <p class="mb-0">Greenfuel, Chisumabnje</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-envelope-open text-primary me-2"></i>
+                                <p class="mb-0">greenfuel.footballclub@co.zw</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-telephone text-primary me-2"></i>
+                                <p class="mb-0">+012 345 67890</p>
+                            </div>
+                            <div class="d-flex mt-4">
+                                <a class="btn btn-primary btn-square me-2" href="https://twitter.com/EthanolBoys"><i class="fab fa-twitter fw-normal"></i></a>
+                                <a class="btn btn-primary btn-square me-2" href="https://www.facebook.com/profile.php?id=100065264750077"><i class="fab fa-facebook-f fw-normal"></i></a>
+                                <a class="btn btn-primary btn-square" href="https://www.instagram.com/greenfuelfc/"><i class="fab fa-instagram fw-normal"></i></a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid text-white" style="background: #061429;">
+        <div class="container text-center">
+            <div class="row justify-content-end">
+                <div class="col-lg-8 col-md-6">
+                    <div class="d-flex align-items-center justify-content-center" style="height: 75px;">
+                        <p class="mb-0">&copy; <a class="text-white border-bottom" href="#">GreenFuelFC</a>. All Rights Reserved. 
+                        
+                        
+                        Designed by <a class="text-white border-bottom" href="https://htmlcodex.com">GreenFuel(PVT)LTD</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,675 @@
+ <!DOCTYPE html>
+<html lang="en">
+<style>
+    .bg-primary, .bg-success {
+   border: 1px dotted white;
+}
+#next-fixtures-box {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 9999; /* Make sure it's on top of everything */
+    background: url('img/fixtures.jpg') no-repeat center center fixed;
+    background-size: cover;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Add a drop shadow */
+    
+  }
+
+  #next-fixtures-box li:hover {
+    background-color: #eee; /* Add a background color on hover */
+    cursor: help; /* Change the cursor to a help cursor */
+
+
+  }
+
+</style>
+<head>
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">  
+    <meta charset="utf-8">
+    <title>GREENFUEL FOOTBALL CLUB</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="GreenFuelFC" name="Greenfuel Football club">
+    <meta content="GreenFuelFC" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-success px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>GREENFUEL, CHISUMBANJE</small>
+                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+012 345 6789</small>
+                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>greenfuel.footballclub@greenfuel.co.zw</small>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://twitter.com/EthanolBoys"><i class="fab fa-twitter fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.facebook.com/profile.php?id=100065264750077"><i class="fab fa-facebook-f fw-normal"></i></a>
+                    
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.instagram.com/greenfuelfc/"><i class="fab fa-instagram fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle" href=""><i class="fab fa-youtube fw-normal"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar & Carousel Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+            <a href="index.html" class="navbar-brand p-0">
+
+                <img src="img/logo.png" alt="greenfuelfc logo" style= "height: 60px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <a href="club.html" class="nav-item nav-link">Club</a>
+                    <a href="fixtures.html" class="nav-item nav-link">Fixtures</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">News</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="latest.html" class="dropdown-item">Latest</a>
+                            <a href="coming/comingsoon.html" class="dropdown-item">General</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">More</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="shop.html" class="dropdown-item">Shop</a>
+                            <a href="media.html" class="dropdown-item">Gallery</a>
+                            <a href="team.html" class="dropdown-item">Players</a>
+                            <!--<a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                            <a href="quote.html" class="dropdown-item">Free Quote</a>-->
+                        </div>
+                    </div>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+                <butaton type="button" class="btn text-primary ms-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></butaton>
+                <!--<a href="coming/comingsoon.html" class="btn btn-primary py-2 px-4 ms-3 bg-success">Download Our Official App</a>-->
+            </div>
+        </nav>
+
+        <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="w-100" src="img/carousel-1.jpg" alt="Image">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 900px;">
+                            
+                            <h1 class="display-1 text-success mb-md-4 animated zoomIn">Boyz DzeNharo</h1>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="w-100" src="img/carousel-2.jpg" alt="Image">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 900px;">
+                            
+                            <h1 class="display-1 text-success mb-md-4 animated zoomIn">GreenFuel FC</h1>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#header-carousel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <!-- Navbar & Carousel End -->
+     
+    
+    <!-- Full Screen Search Start -->
+    <div class="modal fade" id="searchModal" tabindex="-1">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content" style="background: rgba(9, 30, 62, .7);">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex align-items-center justify-content-center">
+                    <div class="input-group" style="max-width: 600px;">
+                        <input type="text" class="form-control bg-transparent border-primary p-3" placeholder="Type search keyword">
+                        <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Full Screen Search End -->
+
+
+    <!-- Facts Start -->
+    <div class="container-fluid facts py-5 pt-lg-0">
+        <div class="container py-5 pt-lg-0">
+            <div class="row gx-0">
+                <div class="col-lg-4 wow zoomIn" data-wow-delay="0.1s">
+                    <div class="bg-success shadow d-flex align-items-center justify-content-center p-4" style="height: 150px;">
+                        
+                        <div class="ps-4">
+                            <h5 class="text-white mb-0">League Position</h5>
+                            <h1 class="text-white mb-0" data-toggle="counter-up"> 8 </h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 wow zoomIn" data-wow-delay="0.3s">
+                    <div class="bg-success shadow d-flex align-items-center justify-content-center p-4" style="height: 150px;">
+    <img src="img/hometeam.jpg" alt="Green Fuel FC logo" class="me-4" style="height: 50px;">
+    <div class="ps-4">
+        <h5 class="text-white mb-0 text-center">Yadah vs GreenFuel</h5>
+        <h1 class="mb-0 text-white text-center" data-toggle="counter-up">15.00</h1><div class="text-white text-center">CAT</div> <div class="text-white text-center">TBA</div> 
+
+    </div>
+    <img src="img/awayteam.png" alt="away team logo" class="ms-4" style="height: 50px;">
+</div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- Facts Start -->
+
+
+    <!-- news Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-7">
+                    <div class="section-title position-relative pb-3 mb-5">
+                        <h5 class="fw-bold text-primary text-uppercase">News</h5>
+                        <h1 class="mb-0 text-success">The fixture is out!!!!</h1>
+                    </div>
+                    <p class="mb-4 text-success">
+                        Football fans all over the world can rejoice as the fixtures for the 2023 season have been released! The anticipation and excitement for the upcoming season are at an all-time high as teams prepare to battle it out on the pitch for glory and pride.
+
+For our beloved football club, the fixtures have been announced, and we can start planning for the season ahead. This is the time for us to get behind our team, show our support, and cheer them on to victory. With the fixtures in hand, we can look forward to some exciting matchups and heated rivalries throughout the season.
+
+The season opener will be a test for our team, as we face a tough opponent in the form of our local rivals. This fixture always holds special significance as it sets the tone for the rest of the season. The players will need to bring their A-game and perform to the best of their abilities to get the three points.
+
+As the season progresses, we will face some of the strongest teams in the league, including the reigning champions and some of the top contenders for the title. These fixtures will be a true test of our team's mettle and will require the players to be at their very best. However, we can be confident that our team will rise to the challenge and give it their all on the pitch.
+
+As we look towards the end of the season, the fixtures promise to be just as exciting as the beginning. The final few matches could be the deciding factor for our team's position in the league table, and we will be cheering them on every step of the way. Whether we are fighting for the title or battling to avoid relegation, we will stand behind our team through thick and thin.
+
+So, football fans, mark your calendars, and get ready for an exciting season ahead. With the fixtures out, it's time to show our support and get behind our team. Let's cheer them on to victory and make this season one to remember. Come on, you Greenfuel!!!!!
+                    </p>
+                   
+                    <div class="d-flex align-items-center mb-4 wow fadeIn" data-wow-delay="0.6s">
+                        
+                        
+                    </div>
+                  
+                </div>
+                <div class="col-lg-5" style="min-height: 500px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s" src="img/boss.jpg" style="object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- news End -->
+    <!-- upcoming fixtures stationery start-->
+
+<div id="next-fixtures-box">
+  <h2 class="text-success">Next Three Fixtures:</h2>
+  <ul>
+    <li class="text-success" title="Venue: TBA, Date & Time: TBA, 2023 at 15:00 PM">Yadah Fc vs Greenfuel Fc</li>
+    <li class="text-success" title="Venue: TBA, Date & Time: TBA, 2023 at 15:00 PM">Green Fuel vs Herentials College Fc</li>
+    <li class="text-success" title="Venue: TBA, Date & Time: TBA, 2023 at 15:00 PM">Hwange Fc vs GreenFuel Fc</li>
+  </ul>
+</div>
+<!-- upcoming fixtures stationery end-->
+    <!-- Features Start -->
+    <!-- Videos Start -->
+
+       
+
+<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+            <h5 class="fw-bold text-primary text-uppercase">Video Update</h5>
+            <h1 class="mb-0 text-success">Check latest updates from the news circles and training session</h1>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 mx-auto">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/VIDEO_ID"></iframe>
+
+
+
+                            
+                        </div>
+                        <p class="text-center mt-3 text-success">ZBC news report</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/VIDEO_ID"></iframe>
+                        </div>
+                        <p class="text-center mt-3">Warm up ahead of a friendly fixture</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/VIDEO_ID"></iframe>
+                        </div>
+                        <p class="text-center mt-3">match highlights</p>
+                    </div>
+                    <!--
+                    <div class="col-sm-6">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/VIDEO_ID"></iframe>
+                        </div>
+                        <p class="text-center mt-3">Video 3 description</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/VIDEO_ID"></iframe>
+                        </div>
+                        <p class="text-center mt-3">Video 4 description</p>
+                    </div>
+                    -->
+                    <div class="col-sm-6">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/VIDEO_ID"></iframe>
+                        </div>
+                        <p class="text-center mt-3">ZBC report</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Videos End -->
+
+    <!-- Pricing Plan Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+                <h5 class="fw-bold text-primary text-uppercase">Trending</h5>
+                <h1 class="mb-0 text-success">See whats trending in our shop</h1>
+            </div>
+            <div class="row">
+  <div class="col-md-4">
+    <div class="card">
+      <img src="pagesimages/boot.jpg" class="card-img-top" style="object-fit: cover;">
+      <div class="card-body">
+        <h5 class="card-title">Product 1</h5>
+        <p class="card-text">$10.00</p>
+        <a href="shop.html" class="btn btn-primary">Buy Now</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card">
+      <img src="pagesimages/boot.jpg" class="card-img-top" style="object-fit: cover;">
+      <div class="card-body">
+        <h5 class="card-title">Product 2</h5>
+        <p class="card-text">$15.00</p>
+        <a href="shop.html" class="btn btn-primary">Buy Now</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card">
+      <img src="pagesimages/boot.jpg" class="card-img-top" style="object-fit: cover;">
+      <div class="card-body">
+        <h5 class="card-title">Product 3</h5>
+        <p class="card-text">$20.00</p>
+        <a href="shop.html" class="btn btn-primary">Buy Now</a>
+      </div>
+    </div>
+  </div>
+</div
+
+            </div>
+        </div>
+    <!-- Pricing Plan End -->
+
+
+   
+    <!-- Testimonial Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="section-title text-center position-relative pb-3 mb-4 mx-auto" style="max-width: 600px;">
+                <h5 class="fw-bold text-primary text-uppercase">FAN Forum</h5>
+                <h1 class="mb-0 text-success">Join in Our Weekely Conversation</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.6s">
+                <div class="testimonial-item bg-success my-4">
+                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
+                        <img class="img-fluid rounded" src="img/fan2.png" style="width: 60px; height: 60px;" >
+                        <div class="ps-4">
+                            <h4 class=" text-success mb-1">Alfy Sidy</h4>
+                            <small class="text-uppercase">Facebook</small>
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-5 px-5">
+                       Green Fuel.Bring it home. Chisumbanje
+                    </div>
+                </div>
+                <div class="testimonial-item bg-success my-4">
+                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
+                        <img class="img-fluid rounded" src="img/fan3.jpg" style="width: 60px; height: 60px;" >
+                        <div class="ps-4">
+                            <h4 class="text-success mb-1">Tigerenashe Dziya</h4>
+                            <small class="text-uppercase">Facebook</small>
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-5 px-5">
+                        Tinozodawo update on lineups pa each and every game week and team yekumba toisupporter , every game riri muHarare hatipotse
+                    </div>
+                </div>
+                <div class="testimonial-item bg-success my-4">
+                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
+                        <img class="img-fluid rounded" src="img/fan2.png" style="width: 60px; height: 60px;" >
+                        <div class="ps-4">
+                            <h4 class="text-success mb-1">Macdonald Nkohla</h4>
+                            <small class="text-uppercase">Facebook</small>
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-5 px-5">
+                        Wish you the best boys
+                    </div>
+                </div>
+                <div class="testimonial-item bg-success my-4">
+                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
+                        <img class="img-fluid rounded" src="img/fan2.png" style="width: 60px; height: 60px;" >
+                        <div class="ps-4">
+                            <h4 class="text-success mb-1">Calvin Madava</h4>
+                            <small class="text-uppercase">Facebook</small>
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-5 px-5">
+                        takaenda takaenda tiri pandazo apaa tinemi guyz
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+
+    <!-- Team Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+                <h5 class="fw-bold text-primary text-uppercase">Fixture</h5>
+                <h1 class="mb-0 text-success">Next Three Fixtures</h1>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
+                    <div class="team-item bg-success rounded overflow-hidden">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="img/fix1.jpg" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href="https://twitter.com/EthanolBoys"><i class="fab fa-twitter fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href="https://www.facebook.com/profile.php?id=100065264750077"><i class="fab fa-facebook-f fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href="https://www.instagram.com/greenfuelfc/"><i class="fab fa-instagram fw-normal"></i></a>
+                                
+                            </div>
+                        </div>
+                        <div class="text-center py-4">
+                             <h4 class="text-white">Home test vs Chiefs</h4>
+                            <p class="text-uppercase text-white m-0">15:00</p>CAT
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
+                    <div class="team-item bg-success rounded overflow-hidden">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="img/fix2.jpg" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href="https://twitter.com/EthanolBoys"><i class="fab fa-twitter fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href="https://www.facebook.com/profile.php?id=100065264750077"><i class="fab fa-facebook-f fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href="https://www.instagram.com/greenfuelfc/"><i class="fab fa-instagram fw-normal"></i></a>
+                                
+                            </div>
+                        </div>
+                        <div class="text-center py-4">
+                             <h4 class="text-white">Home test vs Chiefs</h4>
+                            <p class="text-uppercase m-0 text-white">15:00</p>CAT
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
+                    <div class="team-item bg-success rounded overflow-hidden">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="img/fix3.jpg" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href="https://twitter.com/EthanolBoys"><i class="fab fa-twitter fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href="https://www.facebook.com/profile.php?id=100065264750077"><i class="fab fa-facebook-f fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href="https://www.instagram.com/greenfuelfc/"><i class="fab fa-instagram fw-normal"></i></a>
+                                
+                            </div>
+                        </div>
+                        <div class="text-center py-4">
+                            <h4 class="text-white">Home test vs Chiefs</h4>
+                            <p class="text-uppercase text-white m-0">15:00</p>CAT
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
+
+
+    <!-- Blog Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+              
+                <h1 class="mb-0 text-success">Read The Latest Articles</h1>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
+                    <div class="blog-item bg-success rounded overflow-hidden">
+                        <div class="blog-img position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/blog-1.jpg" alt="">
+                            <a class="position-absolute top-0 start-0 bg-success text-white rounded-end mt-5 py-2 px-4" href="">Social</a>
+                        </div>
+                        <div class="p-4">
+                            <div class="d-flex mb-3">
+                                
+                            </div>
+                            <h4 class="mb-3 text-white">Ready For Yadah </h4>
+                            <p class="text-white"> Boyz dzenharo gear up for the season</p>
+                            <a   class="text-uppercase" href="latest.html">Read More <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
+                    <div class="blog-item bg-success rounded overflow-hidden">
+                        <div class="blog-img position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/blog-2.jpg" alt="">
+                            <a class="position-absolute top-0 start-0 bg-success text-white rounded-end mt-5 py-2 px-4" href="">News</a>
+                        </div>
+                        <div class="p-4">
+                            <div class="d-flex mb-3">
+                            </div>
+                            <h4 class="mb-3 text-white">The shot stopper is set to renew his contract  </h4>
+                            <p class="text-white">Dolor et eos labore stet justo sed est sed sed sed dolor stet amet</p>
+                            <a class="text-uppercase" href="latest.html">Read More <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
+                    <div class="blog-item bg-success rounded overflow-hidden">
+                        <div class="blog-img position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/blog-3.jpg" alt="">
+                            <a class="position-absolute top-0 start-0 bg-success text-white rounded-end mt-5 py-2 px-4" href="">Social</a>
+                        </div>
+                        <div class="p-4">
+                            <div class="d-flex mb-3">
+                                
+                            </div>
+                            <h4 class="mb-3 text-white">Who should start on monday</h4>
+                            <p class="text-white">Dolor et eos labore stet justo sed est sed sed sed dolor stet amet</p>
+                            <a class="text-uppercase" href="latest.html">Read More <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Blog Start -->
+
+
+    <!-- Vendor Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+  <div class="container py-5 mb-5">
+    <div class="bg-white">
+      <div class="sponsor-heading text-center mb-4">
+        <h2 class="text-success">Our Sponsors</h2>
+      </div>
+      <div class="owl-carousel vendor-carousel">
+        <a href="https://www.greenfuel.co.zw/"><img src="img/vendor-1.png" alt=""></a>
+        <a href="https://www.greenfuel.co.zw/"><img src="img/vendor-2.png" alt=""></a>
+        <a href="https://www.greenfuel.co.zw/"><img src="img/vendor-3.png" alt=""></a>
+        <a href="https://www.greenfuel.co.zw/"><img src="img/vendor-4.png" alt=""></a>
+        <a href="https://www.greenfuel.co.zw/"><img src="img/vendor-5.png" alt=""></a>
+        <a href="https://www.greenfuel.co.zw/"><img src="img/vendor-6.png" alt=""></a>
+        <a href="https://www.greenfuel.co.zw/"><img src="img/vendor-7.png" alt=""></a>
+        <a href="https://www.greenfuel.co.zw/"><img src="img/vendor-8.png" alt=""></a>
+        <a href="https://www.greenfuel.co.zw/"><img src="img/vendor-9.png" alt=""></a>
+      </div>
+    </div>
+  </div>
+</div>
+    <!-- Vendor End -->
+    
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-success text-light mt-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-success p-4">
+                        <a href="index.html" class="navbar-brand">
+                            <h1 class="m-0 text-white"><i></i>Become a Member</h1>
+                        </a>
+                        <p class="mt-3 mb-4">Join our club's community today by becoming a member! As a member, you'll get access to exclusive content, including behind-the-scenes videos, player interviews, and pre-match analysis. You'll also receive our monthly newsletter, featuring the latest club news, upcoming fixtures, and member-only offers</p>
+                        <form action="coming/comingsoon.html" onsubmit="window.location.href = this.action; return false;">
+                            <div class="input-group">
+                               <input type="text" class="form-control border-white p-3" placeholder="Your Email">
+                                    <button class="btn btn-dark">Sign Up</button>
+                                     </div>
+                              </form>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-6">
+                    <div class="row gx-5">
+                        <div class="col-lg-4 col-md-12 pt-5 mb-5">
+                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                                <h3 class="text-light mb-0">Get In Touch</h3>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-geo-alt text-primary me-2"></i>
+                                <p class="mb-0">Greenfuel, Chisumabnje</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-envelope-open text-primary me-2"></i>
+                                <p class="mb-0">greenfuel.footballclub@co.zw</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-telephone text-primary me-2"></i>
+                                <p class="mb-0">+012 345 67890</p>
+                            </div>
+                            <div class="d-flex mt-4">
+                                <a class="btn btn-primary btn-square me-2" href="https://twitter.com/EthanolBoys"><i class="fab fa-twitter fw-normal"></i></a>
+                                <a class="btn btn-primary btn-square me-2" href="https://www.facebook.com/profile.php?id=100065264750077"><i class="fab fa-facebook-f fw-normal"></i></a>
+                                <a class="btn btn-primary btn-square" href="https://www.instagram.com/greenfuelfc/"><i class="fab fa-instagram fw-normal"></i></a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid text-white" style="background: #061429;">
+        <div class="container text-center">
+            <div class="row justify-content-end">
+                <div class="col-lg-8 col-md-6">
+                    <div class="d-flex align-items-center justify-content-center" style="height: 75px;">
+                        <p class="mb-0">&copy; <a class="text-white border-bottom" href="#">GreenFuelFC</a>. All Rights Reserved. 
+						
+						
+						Designed by <a class="text-white border-bottom" href="https://htmlcodex.com">GreenFuel(PVT)LTD</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
